@@ -6,6 +6,7 @@ import { AntDesign } from "@expo/vector-icons";
 export const SearchContainer = styled(View)`
 	padding: ${(props) => props.theme.space[3]};
 	z-index: -10;
+	padding-bottom: ${(props) => props.theme.space[0]};
 `;
 
 export const MenuList = styled(FlatList).attrs({
@@ -26,7 +27,7 @@ export const Cart = styled(AntDesign)`
 	top: 8%;
 	align-self: flex-end;
 	right: 30px;
-	color: ${(props) => props.theme.colors.ui.error};
+	color: ${(props) => props.theme.colors.ui.success};
 	/* z-index: 100; */
 `;
 

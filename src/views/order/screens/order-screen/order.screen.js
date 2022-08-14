@@ -56,7 +56,7 @@ export const OrderScreen = ({ navigation }) => {
 								}
 								key={item.id}
 							>
-								<Spacer position="bottom" size="large">
+								<Spacer position="bottom" size="medium">
 									<FadeInView>
 										<OrderInfoCard item={item} loadOrder={loadOrder} />
 									</FadeInView>

@@ -80,7 +80,7 @@ export const AppNavigator = ({ authorization }) => {
 						return <Ionicons name={iconName} size={size} color={color} />;
 					}
 				},
-				tabBarActiveTintColor: "tomato",
+				tabBarActiveTintColor: "#138000",
 				tabBarInactiveTintColor: "#ccc",
 				headerShown: false,
 			})}
