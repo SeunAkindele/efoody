@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { useFocusEffect } from "@react-navigation/native";
-import { TouchableOpacity } from "react-native";
+import { TouchableOpacity, Platform, StyleSheet } from "react-native";
 import { Searchbar } from "react-native-paper";
 import { SafeArea } from "../../../../components/utility/safe-area.component";
 import { MenuInfoCard } from "../../components/menu-info-card/menu-info-card.component";
@@ -45,12 +45,14 @@ export const MenuScreen = ({ navigation }) => {
 	return (
 		<SafeArea>
 			<IsLoading loading={loading} />
-			<SearchContainer>
-				<Searchbar placeholder="Search" onChangeText={(text) => search(text)} />
-			</SearchContainer>
-			<Cart onPress={() => navigation.navigate("Cart")} name="shoppingcart" />
+			<FadeInView>
+				<SearchContainer>
+					<Searchbar placeholder="Search" onChangeText={(text) => search(text)} />
+				</SearchContainer>
+			</FadeInView>
+			<Cart style={styles} onPress={() => navigation.navigate("Cart")} name="shoppingcart" />
 			{cartNum > 0 && (
-				<CartCount onPress={() => navigation.navigate("Cart")}>
+				<CartCount style={styles2} onPress={() => navigation.navigate("Cart")}>
 					<CartCountText>{loadCart ? "---" : cartNum}</CartCountText>
 				</CartCount>
 			)}
@@ -98,3 +100,11 @@ export const MenuScreen = ({ navigation }) => {
 		</SafeArea>
 	);
 };
+
+const styles = StyleSheet.create({
+	top: Platform.OS === "ios" ? 75 : 30,
+});
+
+const styles2 = StyleSheet.create({
+	top: Platform.OS === "ios" ? 70 : 25,
+});

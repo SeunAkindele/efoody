@@ -1,9 +1,9 @@
-import React, {useContext, useState} from "react";
-import { useFocusEffect } from '@react-navigation/native';
+import React, { useContext, useState } from "react";
+import { useFocusEffect } from "@react-navigation/native";
 import { SafeArea } from "../../../../components/utility/safe-area.component";
-import { LoginContext } from '../../../account/context/login.context';
+import { LoginContext } from "../../../account/context/login.context";
 import { DashboardContainer, DashboardCardCover } from "./dashboard.screen.styles";
-import {Profile} from "../../components/profile/profile.component";
+import { Profile } from "../../components/profile/profile.component";
 import { Sales } from "../../components/sales/sales.component";
 import { FadeInView } from "../../../../components/animations/fade.animation";
 import { IsLoading } from "../../../../components/loading/loading.component";
@@ -18,83 +18,71 @@ import { Items } from "../../components/items/items.component";
 import { Staffs } from "../../components/staffs/staffs.component";
 
 export const DashboardScreen = () => {
-  const { user, authorization } = useContext(LoginContext);
-  const {  
-    getDashboard, 
-    loading,
-    salesData,
-    orderStatusData,
-    mostSoldItem,
-    customers,
-    staffs,
-    items
-  } = useContext(DashboardContext);
+	const { user, authorization } = useContext(LoginContext);
+	const { getDashboard, loading, salesData, orderStatusData, mostSoldItem, customers, staffs, items } = useContext(DashboardContext);
 
-  const [loadData, setLoadData] = useState(false);
+	const [loadData, setLoadData] = useState(false);
 
-  useFocusEffect(
-    React.useCallback(() => {
-      setTimeout(() => { 
-        getDashboard();
-      }, 2000);
-    }, [])
-  );
+	useFocusEffect(
+		React.useCallback(() => {
+			setTimeout(() => {
+				getDashboard();
+			}, 2000);
+		}, []),
+	);
 
-  const refresh = () => {
-    setLoadData(true);
-    setTimeout(() => { 
-      getDashboard();
-      setLoadData(false);
-    }, 2000);
-  }
+	const refresh = () => {
+		setLoadData(true);
+		setTimeout(() => {
+			getDashboard();
+			setLoadData(false);
+		}, 2000);
+	};
 
-  return (
-    <SafeArea>
-      <IsLoading loading={loading} />
-      {loading 
-        ?
-        <ErrorContainer>
-          <Text variant="error">Fetching Data...</Text>
-        </ErrorContainer>
-        :
-        <DashboardContainer
-          data={[{id: 1}]}
-          keyExtractor={(item) => item.id}
-          onRefresh={refresh}
-          refreshing={loadData}
-          renderItem={({ item }) => (
-            <FadeInView>
-              <DashboardCardCover elevation={5}>
-                <Profile user={user} />
-                <Sales salesData={salesData} />
-              </DashboardCardCover>
-              <DashboardCardCover elevation={5}>
-                <Order orderStatusData={orderStatusData} />
-              </DashboardCardCover>
-              {
-                authorization == 2
-                &&
-                <>
-                  <DashboardCardCover elevation={5}>
-                    <Customers customers={customers} />
-                  </DashboardCardCover>
-                  
-                  <DashboardCardCover elevation={5}>
-                    <MostSold mostSoldData={mostSoldItem} />
-                  </DashboardCardCover>
-                  <DashboardCardCover elevation={5}>
-                    <Items items={items} />
-                  </DashboardCardCover>
-                  <DashboardCardCover elevation={5}>
-                    <Staffs staffs={staffs} />
-                  </DashboardCardCover>
-                </>
-              }
-              <Spacer position="top" size="large" />
-            </FadeInView>
-          )}
-        />
-      }
-    </SafeArea>
-  )
-}
+	return (
+		<SafeArea>
+			<IsLoading loading={loading} />
+			{loading ? (
+				<ErrorContainer>
+					<Text variant="error">Fetching Data...</Text>
+				</ErrorContainer>
+			) : (
+				<DashboardContainer
+					data={[{ id: 1 }]}
+					keyExtractor={(item) => item.id}
+					onRefresh={refresh}
+					refreshing={loadData}
+					renderItem={({ item }) => (
+						<FadeInView>
+							<DashboardCardCover elevation={5}>
+								<Profile user={user} />
+								<Sales salesData={salesData} />
+							</DashboardCardCover>
+							<DashboardCardCover elevation={5}>
+								<Order orderStatusData={orderStatusData} />
+							</DashboardCardCover>
+							{authorization == 2 && (
+								<>
+									<DashboardCardCover elevation={5}>
+										<Customers customers={customers} />
+									</DashboardCardCover>
+
+									<DashboardCardCover elevation={5}>
+										<MostSold mostSoldData={mostSoldItem} />
+									</DashboardCardCover>
+									<DashboardCardCover elevation={5}>
+										<Items items={items} />
+									</DashboardCardCover>
+									<DashboardCardCover elevation={5}>
+										<Staffs staffs={staffs} />
+									</DashboardCardCover>
+								</>
+							)}
+							<Spacer position="top" size="large" />
+						</FadeInView>
+					)}
+				/>
+			)}
+		</SafeArea>
+	);
+};

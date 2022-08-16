@@ -24,7 +24,7 @@ export const MenuIcon = styled(Avatar.Icon).attrs({
 export const Cart = styled(AntDesign)`
 	font-size: ${(props) => props.theme.fontSizes.h5};
 	position: absolute;
-	top: 8%;
+
 	align-self: flex-end;
 	right: 30px;
 	color: ${(props) => props.theme.colors.ui.success};
