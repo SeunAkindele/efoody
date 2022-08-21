@@ -1,4 +1,5 @@
 import React from "react";
+import { Image } from "react-native";
 import LottieView from "lottie-react-native";
 import { AccountBackground, AccountCover, AccountContainer, AuthButton, Title, AnimationWrapper } from "./account-screen.styles";
 import { Spacer } from "../../../../components/spacer/spacer.component";
@@ -6,11 +7,9 @@ import { Spacer } from "../../../../components/spacer/spacer.component";
 export const AccountScreen = ({ navigation }) => {
 	return (
 		<AccountBackground>
-			<AccountCover />
-			<AnimationWrapper>
-				<LottieView key="animation" autoPlay loop resizeMode="cover" source={require("../../../../assets/animations/plate.json")} />
-			</AnimationWrapper>
-			<Title>Perfect Menu</Title>
+			{/* <AccountCover /> */}
+			<AnimationWrapper></AnimationWrapper>
+			<Image source={{ uri: "../../../../assets/images/efoody.png" }} />
 			<AccountContainer>
 				<AuthButton icon="lock-open-outline" mode="contained" onPress={() => navigation.navigate("Login")}>
 					Login
