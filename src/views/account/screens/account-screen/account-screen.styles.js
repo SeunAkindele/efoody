@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../../../components/theme/colors";
-import { View } from "react-native";
+import { View, Image } from "react-native";
 import { Text } from "../../../../components/typography/text.component";
 import { Button } from "react-native-paper";
 
@@ -9,15 +9,14 @@ export const AccountBackground = styled.ImageBackground.attrs({
 })`
 	flex: 1;
 	align-items: center;
-	justify-content: center;
+	/* justify-content: center; */
 `;
 
-// export const AccountBackground = styled(View)`
-// 	flex: 1;
-// 	align-items: center;
-// 	justify-content: center;
-// 	background-color: ${({ theme }) => theme.colors.bg.primary};
-// `;
+export const EfoodyTitle = styled(Image)`
+	align-self: center;
+	margin-top: ${({ theme }) => theme.space[5]};
+	margin-bottom: 25%;
+`;
 
 export const AccountCover = styled(View)`
 	position: absolute;
@@ -27,7 +26,6 @@ export const AccountCover = styled(View)`
 `;
 
 export const AccountContainer = styled(View)`
-	/* background-color: rgba(255, 255, 255, 0.7); */
 	padding: ${({ theme }) => theme.space[4]};
 	margin-top: ${({ theme }) => theme.space[2]};
 `;
