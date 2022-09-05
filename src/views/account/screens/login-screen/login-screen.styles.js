@@ -25,7 +25,7 @@ export const LoginFooter = styled(View)`
 
 export const EfoodyTitle = styled(Image)`
 	align-self: center;
-	margin-top: ${({ theme }) => theme.space[5]};
+	margin-top: 20%;
 `;
 
 export const LoginContainer = styled(View)`

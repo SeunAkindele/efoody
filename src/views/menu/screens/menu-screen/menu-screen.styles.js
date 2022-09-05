@@ -8,7 +8,14 @@ export const SearchContainer = styled(View)`
 	z-index: -10;
 	padding-bottom: ${(props) => props.theme.space[0]};
 `;
-
+/**
+ * export const LoginBackground = styled.ImageBackground.attrs({
+	source: require("../../../../assets/images/efoody_footer.png"),
+})`
+	flex: 1;
+	align-items: center;
+`;
+ */
 export const MenuList = styled(FlatList).attrs({
 	contentContainerStyle: {
 		padding: 16,

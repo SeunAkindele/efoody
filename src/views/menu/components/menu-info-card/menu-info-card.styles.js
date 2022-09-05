@@ -31,18 +31,18 @@ export const Info = styled(View)`
 	align-items: center;
 	justify-content: space-between;
 	padding: ${(props) => props.theme.space[2]};
+	padding-top: 11px;
+	padding-bottom: 11px;
 `;
 
 export const Available = styled(AntDesign)`
 	font-size: ${(props) => props.theme.fontSizes.button};
-
 	padding-left: ${(props) => props.theme.space[2]};
 	color: ${(props) => props.theme.colors.text.success};
 `;
 
 export const Unavailable = styled(MaterialIcons)`
 	font-size: ${(props) => props.theme.fontSizes.button};
-
 	padding-left: ${(props) => props.theme.space[2]};
 	color: ${(props) => props.theme.colors.text.error};
 `;

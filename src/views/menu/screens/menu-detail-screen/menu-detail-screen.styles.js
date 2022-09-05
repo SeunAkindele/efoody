@@ -4,7 +4,7 @@ import { View } from "react-native";
 import { colors } from "../../../../components/theme/colors";
 
 export const OrderButton = styled(Button).attrs({
-	color: colors.brand.primary,
+	color: colors.ui.success,
 })`
 	padding: ${(props) => props.theme.space[2]};
 	width: 90%;

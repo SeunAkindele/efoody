@@ -14,8 +14,8 @@ export const AccountBackground = styled.ImageBackground.attrs({
 
 export const EfoodyTitle = styled(Image)`
 	align-self: center;
-	margin-top: ${({ theme }) => theme.space[5]};
-	margin-bottom: 25%;
+	margin-top: 20%;
+	margin-bottom: 30%;
 `;
 
 export const AccountCover = styled(View)`
