@@ -9,6 +9,7 @@ import { strlen, ucFirst } from "../../../../components/utility/functions";
 import { Text } from "../../../../components/typography/text.component";
 import { Dropdown } from "../../../../components/dropdown/dropdown.component";
 import { url } from "../../../../api/url";
+import { MenuInfoCardDetails } from "../../../menu/components/menu-info-card-details/menu-info-card-details-component";
 
 export const ItemDetailScreen = ({ route, navigation }) => {
 	const { item } = route.params;
@@ -55,7 +56,7 @@ export const ItemDetailScreen = ({ route, navigation }) => {
 
 	return (
 		<>
-			<ItemInfoCard item={item} />
+			<MenuInfoCardDetails menu={item} />
 			<ScrollView>
 				<Spacer position="right" size="large" />
 				<Spacer position="left" size="large">
@@ -129,15 +130,15 @@ export const ItemDetailScreen = ({ route, navigation }) => {
 				)}
 				<Spacer position="top" size="large" />
 				<Spacer position="left" size="large">
-					<ItemInput placeholder={itemName} autoCapitalize="none" onChangeText={(name) => setItemName(name)} />
+					<ItemInput underlineColor="#138000" activeUnderlineColor="#138000" placeholder={itemName} autoCapitalize="none" onChangeText={(name) => setItemName(name)} />
 				</Spacer>
 				<Spacer position="bottom" size="large" />
 				<Spacer position="left" size="large">
-					<ItemInput placeholder={itemPrice} autoCapitalize="none" onChangeText={(price) => setItemPrice(price)} />
+					<ItemInput underlineColor="#138000" activeUnderlineColor="#138000" placeholder={itemPrice} autoCapitalize="none" onChangeText={(price) => setItemPrice(price)} />
 				</Spacer>
 				<Spacer position="bottom" size="large" />
 				<Spacer position="left" size="large">
-					<ItemInput placeholder="Add Ingredients" multiline={true} numberOfLines={5} style={{ height: 150 }} autoCapitalize="none" onChangeText={(ingredients) => setItemIngredients(ingredients)} />
+					<ItemInput underlineColor="#138000" activeUnderlineColor="#138000" placeholder="Add Ingredients" multiline={true} numberOfLines={5} style={{ height: 150 }} autoCapitalize="none" onChangeText={(ingredients) => setItemIngredients(ingredients)} />
 				</Spacer>
 				<Spacer position="bottom" size="large" />
 				<Spacer size="large" position="top">

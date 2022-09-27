@@ -65,7 +65,7 @@ export const ItemManagementScreen = ({ navigation }) => {
 			<IsLoading loading={loading} />
 			<ItemContainer>
 				<Spacer size="large">
-					<ItemInput label="Item Category" autoCapitalize="none" onChangeText={(name) => setCategory(name)} />
+					<ItemInput label="Item Category" autoCapitalize="none" onChangeText={(name) => setCategory(name)} underlineColor="#138000" activeUnderlineColor="#138000" />
 				</Spacer>
 				<Spacer size="large">
 					<ItemButton mode="contained" disabled={loading && true} onPress={() => onCreateItemCategory(navigation, category)}>
@@ -77,15 +77,15 @@ export const ItemManagementScreen = ({ navigation }) => {
 						<Dropdown data={itemCategories} onValueChange={(item) => setCategoryId(item)} placeholder="Select Item Category *" />
 					</Spacer>
 					<Spacer size="large">
-						<ItemInput label="Item name *" autoCapitalize="none" onChangeText={(name) => setName(name)} />
+						<ItemInput underlineColor="#138000" activeUnderlineColor="#138000" label="Item name *" autoCapitalize="none" onChangeText={(name) => setName(name)} />
 					</Spacer>
 
 					<Spacer size="large">
-						<ItemInput label="Item Price *" autoCapitalize="none" onChangeText={(price) => setPrice(price)} />
+						<ItemInput underlineColor="#138000" activeUnderlineColor="#138000" label="Item Price *" autoCapitalize="none" onChangeText={(price) => setPrice(price)} />
 					</Spacer>
 
 					<Spacer size="large">
-						<ItemInput label="Item Ingredients *" multiline={true} numberOfLines={5} style={{ height: 150 }} autoCapitalize="none" onChangeText={(ingredients) => setIngredients(ingredients)} />
+						<ItemInput underlineColor="#138000" activeUnderlineColor="#138000" label="Item Ingredients *" multiline={true} numberOfLines={5} style={{ height: 150 }} autoCapitalize="none" onChangeText={(ingredients) => setIngredients(ingredients)} />
 					</Spacer>
 
 					<Spacer size="large">

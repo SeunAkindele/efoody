@@ -4,7 +4,7 @@ import starGold from "../../../../../assets/star-gold";
 // import open from "../../../../../assets/open";
 import { Spacer } from "../../../../components/spacer/spacer.component";
 import { Text } from "../../../../components/typography/text.component";
-import { MenuCard, Info, LeftInfo, RightInfo, Icon, Available, Unavailable } from "./menu-info-card.styles";
+import { MenuCard, Info, LeftInfo, RightInfo, Icon, Unavailable } from "./menu-info-card.styles";
 import { format } from "../../../../components/utility/functions";
 import { url } from "../../../../api/url";
 

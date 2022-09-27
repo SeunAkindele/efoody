@@ -4,30 +4,27 @@ import starGold from "../../../../../assets/star-gold";
 import open from "../../../../../assets/open";
 import { Spacer } from "../../../../components/spacer/spacer.component";
 import { Text } from "../../../../components/typography/text.component";
-import { ItemCard, ItemCardCover, Address, Info, Rating, Section, SectionEnd } from "./item-info-card.styles";
+import { ItemCard, Info, LeftInfo, RightInfo, Icon, Unavailable } from "./item-info-card.styles";
 import { format } from "../../../../components/utility/functions";
 import { url } from "../../../../api/url";
 
-export const ItemInfoCard = ({ item: { name, image, disabled_status, rates, price } }) => {
+export const ItemInfoCard = ({ item: { id, name, image, disabled_status, rates, price } }) => {
 	return (
-		<ItemCard elevation={5}>
-			<ItemCardCover key={name} source={{ uri: url("vendor/images/", image) }} />
+		<ItemCard elevation={5} key={id}>
 			<Info>
-				<Text variant="label">{name}</Text>
-				<Section>
-					<Rating>
-						<SvgXml xml={starGold} width={20} height={20} />
-						<Spacer position="left" size="small" />
-						<Text variant="label">{rates.toFixed(1)}</Text>
-					</Rating>
-					<SectionEnd>
-						{disabled_status == 1 && <Text variant="error">CLOSED TEMPORARILY</Text>}
-						<Spacer position="left" size="large">
-							{disabled_status == 0 && <SvgXml xml={open} width={20} height={20} />}
-						</Spacer>
-					</SectionEnd>
-				</Section>
-				<Address>₦{format(price)}</Address>
+				<LeftInfo>
+					<Icon source={{ uri: url("vendor/images/", image) }} />
+					<Text variant="tag">{name}</Text>
+					<Spacer position="left" size="medium" />
+					<Text variant="tag">₦{format(price)}</Text>
+				</LeftInfo>
+				<RightInfo>
+					<SvgXml xml={starGold} width={15} height={15} />
+					<Spacer position="left" size="medium" />
+					<Text variant="tag">{rates.toFixed(1)}</Text>
+					<Spacer position="left" size="medium" />
+					{disabled_status == 1 && <Unavailable name="block" />}
+				</RightInfo>
 			</Info>
 		</ItemCard>
 	);

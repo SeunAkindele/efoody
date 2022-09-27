@@ -35,15 +35,15 @@ export const StaffManagementScreen = ({ navigation }) => {
 			<IsLoading loading={loading} />
 			<StaffContainer>
 				<Spacer size="large">
-					<StaffInput label="Staff name *" autoCapitalize="none" onChangeText={(u) => setName(u)} />
+					<StaffInput label="Staff name *" underlineColor="#138000" activeUnderlineColor="#138000" autoCapitalize="none" onChangeText={(u) => setName(u)} />
 				</Spacer>
 
 				<Spacer size="large">
-					<StaffInput label="E-mail *" textContentType="emailAddress" autoCapitalize="none" onChangeText={(u) => setEmail(u)} />
+					<StaffInput underlineColor="#138000" activeUnderlineColor="#138000" label="E-mail *" textContentType="emailAddress" autoCapitalize="none" onChangeText={(u) => setEmail(u)} />
 				</Spacer>
 
 				<Spacer size="large">
-					<StaffInput label="Phone number *" keyboardType="tel" autoCapitalize="none" onChangeText={(u) => setPhone(u)} />
+					<StaffInput underlineColor="#138000" activeUnderlineColor="#138000" label="Phone number *" keyboardType="tel" autoCapitalize="none" onChangeText={(u) => setPhone(u)} />
 				</Spacer>
 
 				<Spacer size="large">

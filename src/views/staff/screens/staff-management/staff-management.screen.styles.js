@@ -13,7 +13,7 @@ export const StaffInput = styled(TextInput)`
 `;
 
 export const StaffButton = styled(Button).attrs({
-	color: colors.brand.primary,
+	color: colors.text.success,
 })`
 	padding: ${(props) => props.theme.space[2]};
 `;
